@@ -13,10 +13,6 @@ terraform {
       source = "hashicorp/tls"
       version = "~>4.0"
     }
-    github = {
-      source = "integrations/github"
-      version = "5.32.0"
-    }
   }
   required_version = ">= 1.1.0"
 }
