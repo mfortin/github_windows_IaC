@@ -21,17 +21,17 @@ terraform {
   required_version = ">= 1.1.0"
 }
 
-#Read Username and password from file
-data "external" "win_account" {
-  program = ["cat", "./sensitive_info.json"]
-}
-
 provider "azurerm" {
   features {}
 }
 
 provider "github" {
   features {}
+}
+
+#Read Username and password from file
+data "external" "win_account" {
+  program = ["cat", "./sensitive_info.json"]
 }
 
 resource "azurerm_resource_group" "main" {
