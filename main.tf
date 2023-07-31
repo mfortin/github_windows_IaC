@@ -25,10 +25,6 @@ provider "azurerm" {
   features {}
 }
 
-provider "github" {
-  features {}
-}
-
 #Read Username and password from file
 data "external" "win_account" {
   program = ["cat", "./sensitive_info.json"]
