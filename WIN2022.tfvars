@@ -1,0 +1,5 @@
+OS_publisher   = "MicrosoftWindowsServer"
+OS_version     = "2022"
+system_release = "datacenter-g2"
+hostname       = "AL2022"
+product_id     = "WindowsServer"
