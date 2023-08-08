@@ -168,7 +168,7 @@ resource "azurerm_virtual_machine_extension" "enablewinrm" {
   auto_upgrade_minor_version = true
   settings                   = <<SETTINGS
     {
-      "fileUris": ["https://raw.githubusercontent.com/MrSteve81/github_windows_IaC/devel/scripts/ConfigureRemotingForAnsible.ps1"],
+      "fileUris": ["https://raw.githubusercontent.com/ansible-lockdown/github_windows_IaC/devel/scripts/ConfigureRemotingForAnsible.ps1"],
       "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File ConfigureRemotingForAnsible.ps1"
     }
 SETTINGS
