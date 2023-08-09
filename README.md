@@ -32,7 +32,7 @@ This enables us to manage the workflow and IAC centrally, enabling us to quickly
 
 ```mermaid
    graph TD;
-    A[Benchmark Pipeline] -->|Starts the github workflow|B[Loads  the windws_benchmark_testing]
+    A[Benchmark Pipeline] -->|Starts the github workflow|B[Loads  the windows_benchmark_testing]
     B --> C[Imports variables set in repo]
     C --> D[STEP - Welcome Message]
     D --> E[Sends welcome if first PR and invite to discord]
