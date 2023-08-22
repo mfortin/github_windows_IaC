@@ -1,5 +1,5 @@
 OS_publisher   = "MicrosoftWindowsDesktop"
 OS_version     = "win11"
-system_release = "win11-21h2-pro"
+system_release = "21h2-pro"
 hostname       = "AL"
 product_id     = "windows-11"
