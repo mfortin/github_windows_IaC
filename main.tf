@@ -16,7 +16,7 @@ terraform {
 locals {
   name_prefix = "${var.prefix}-${var.OS_version}-${var.benchmark_type}-${var.run_job_id}"
   # Read Username and password from file
-  win_crendentials = jsondecode(file("sensitive_info.json"))
+  win_credentials = jsondecode(file("sensitive_info.json"))
   tags = {
     Environment = var.tagname
     Name        = "${var.OS_version}-${var.benchmark_type}"
@@ -112,8 +112,8 @@ resource "azurerm_windows_virtual_machine" "main" {
   resource_group_name = azurerm_resource_group.main.name
   location            = azurerm_resource_group.main.location
   size                = var.system_size
-  admin_username      = local.win_crendentials["username"]
-  admin_password      = local.win_crendentials["password"]
+  admin_username      = local.win_credentials["username"]
+  admin_password      = local.win_credentials["password"]
   network_interface_ids = [
     azurerm_network_interface.main.id,
   ]
@@ -169,8 +169,8 @@ resource "local_file" "inventory" {
           }
         }
         vars = {
-          ansible_user                         = local.win_crendentials["username"]
-          ansible_password                     = local.win_crendentials["password"]
+          ansible_user                         = local.win_credentials["username"]
+          ansible_password                     = local.win_credentials["password"]
           setup_audit                          = true
           run_audit                            = true
           system_is_ec2                        = true
