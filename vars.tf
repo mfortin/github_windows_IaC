@@ -56,3 +56,9 @@ variable "repository" {
   description = "The repository thats being tested"
   type        = string
 }
+
+variable "run_job_id" {
+  description = "The Run Job ID from Github"
+  type        = string
+  default     = "0"
+}
